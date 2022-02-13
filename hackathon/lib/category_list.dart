@@ -49,7 +49,7 @@ class _CategoryList extends State<CategoryList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Nutrient Types"),
+          title: const Text("Nutrient Types"),
           leading: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -60,7 +60,7 @@ class _CategoryList extends State<CategoryList> {
           ),
         ),
         body: Column(children: [
-          Padding(
+          const Padding(
             child: Align(
               alignment: Alignment.topLeft,
               child: Text(
@@ -71,8 +71,8 @@ class _CategoryList extends State<CategoryList> {
             padding: EdgeInsets.all(16.0),
           ),
           Expanded(
+            flex: 2,
             child: ReorderableListView(
-              shrinkWrap: true,
               children: _categories
                   .map(
                     (item) => Card(
