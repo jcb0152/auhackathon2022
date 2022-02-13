@@ -60,7 +60,7 @@ class _CategoryList extends State<CategoryList> {
           ),
         ),
         body: Column(children: [
-          const Padding(
+          Padding(
             child: Align(
               alignment: Alignment.topLeft,
               child: Text(
@@ -72,6 +72,7 @@ class _CategoryList extends State<CategoryList> {
           ),
           Expanded(
             child: ReorderableListView(
+              shrinkWrap: true,
               children: _categories
                   .map(
                     (item) => Card(
@@ -105,6 +106,18 @@ class _CategoryList extends State<CategoryList> {
                 }
                 setState(() {});
               },
+            ),
+          ),
+          const Expanded(
+            child: Padding(
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Low",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+              padding: EdgeInsets.all(16.0),
             ),
           ),
           ElevatedButton(
